@@ -45,17 +45,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DraggingHandle.cs" />
-    <Compile Include="IntroForm.cs">
+    <Compile Include="ExceptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IntroForm.Designer.cs">
-      <DependentUpon>IntroForm.cs</DependentUpon>
+    <Compile Include="ExceptionForm.Designer.cs">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HeaderBar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="HeaderBar.Designer.cs">
-      <DependentUpon>HeaderBar.cs</DependentUpon>
+    <Compile Include="Icons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Icons.resx</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -63,8 +62,19 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeaderBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HeaderBar.Designer.cs">
+      <DependentUpon>HeaderBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Installers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Installers.resx</DependentUpon>
+    </Compile>
     <Compile Include="StepStatus.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,13 +82,17 @@
       <DependentUpon>StepStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="Steps\CheckIISLogsPath.cs" />
+    <Compile Include="Steps\CheckServerAccessible.cs" />
+    <Compile Include="Steps\InstallApp.cs" />
     <Compile Include="Steps\IStep.cs" />
+    <Compile Include="Steps\NoopStep.cs" />
     <Compile Include="Steps\StepException.cs" />
     <EmbeddedResource Include="HeaderBar.resx">
       <DependentUpon>HeaderBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IntroForm.resx">
-      <DependentUpon>IntroForm.cs</DependentUpon>
+    <EmbeddedResource Include="Icons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Icons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -93,6 +107,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Installers.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Installers.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="StepStatus.resx">
       <DependentUpon>StepStatus.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +126,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1354125883_notification_done.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1354125891_notification_warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1354127564_player_record.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SnareForWindows-4.0.1.1-MultiArch.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EpilogSetup-1.6.0-MultiArch.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

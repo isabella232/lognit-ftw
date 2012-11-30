@@ -8,7 +8,6 @@ namespace ForTheWin.Steps
     public interface IStep
     {
         string Title { get; }
-        string Description { get; }
-        string Execute();
+        void Execute();
     }
 }

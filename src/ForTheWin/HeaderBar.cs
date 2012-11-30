@@ -19,11 +19,11 @@ namespace ForTheWin
         public DraggingHandle BindHandleTo(Form form)
         {
             var handle = new DraggingHandle(form);
-            handle.Bind(IconBox, CloseButton, this);
+            handle.Bind(iconBox, backgroundPanel, this);
             return handle;
         }
 
-        private void CloseButton_Click(object sender, EventArgs e)
+        private void closeButton_Click(object sender, EventArgs e)
         {
             ParentForm.Close();
         }

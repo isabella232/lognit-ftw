@@ -9,12 +9,11 @@ using System.Windows.Forms;
 
 namespace ForTheWin
 {
-    public partial class IntroForm : Form
+    public partial class ExceptionForm : Form
     {
-        public IntroForm()
+        public ExceptionForm()
         {
             InitializeComponent();
-            headerBar.BindHandleTo(this);
         }
     }
 }

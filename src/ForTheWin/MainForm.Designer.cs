@@ -29,88 +29,155 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.stepStatus1 = new ForTheWin.StepStatus();
-            this.stepStatus2 = new ForTheWin.StepStatus();
-            this.stepStatus3 = new ForTheWin.StepStatus();
-            this.stepStatus4 = new ForTheWin.StepStatus();
-            this.headerBar1 = new ForTheWin.HeaderBar();
+            this.installButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.serverHostBox = new System.Windows.Forms.TextBox();
+            this.logFileFormatBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.installStatus = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.header = new ForTheWin.HeaderBar();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // stepStatus1
+            // installButton
             // 
-            this.stepStatus1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.installButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.installButton.FlatAppearance.BorderSize = 0;
+            this.installButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.installButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.installButton.Image = ((System.Drawing.Image)(resources.GetObject("installButton.Image")));
+            this.installButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.installButton.Location = new System.Drawing.Point(295, 197);
+            this.installButton.Name = "installButton";
+            this.installButton.Size = new System.Drawing.Size(97, 53);
+            this.installButton.TabIndex = 1;
+            this.installButton.Text = "Install";
+            this.installButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.installButton.UseVisualStyleBackColor = true;
+            this.installButton.Click += new System.EventHandler(this.installButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(370, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "This utility will install Snare and Epilog collectors pointing to a Lognit instan" +
+    "ce.";
+            // 
+            // serverHostBox
+            // 
+            this.serverHostBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.stepStatus1.BackColor = System.Drawing.Color.White;
-            this.stepStatus1.Location = new System.Drawing.Point(0, 48);
-            this.stepStatus1.Name = "stepStatus1";
-            this.stepStatus1.Size = new System.Drawing.Size(695, 88);
-            this.stepStatus1.TabIndex = 0;
+            this.serverHostBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.serverHostBox.Location = new System.Drawing.Point(19, 114);
+            this.serverHostBox.Name = "serverHostBox";
+            this.serverHostBox.Size = new System.Drawing.Size(373, 20);
+            this.serverHostBox.TabIndex = 4;
+            this.serverHostBox.Text = "localhost:5140";
             // 
-            // stepStatus2
+            // logFileFormatBox
             // 
-            this.stepStatus2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.logFileFormatBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.stepStatus2.BackColor = System.Drawing.Color.White;
-            this.stepStatus2.Location = new System.Drawing.Point(-2, 142);
-            this.stepStatus2.Name = "stepStatus2";
-            this.stepStatus2.Size = new System.Drawing.Size(695, 88);
-            this.stepStatus2.TabIndex = 1;
+            this.logFileFormatBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.logFileFormatBox.Location = new System.Drawing.Point(19, 165);
+            this.logFileFormatBox.Name = "logFileFormatBox";
+            this.logFileFormatBox.Size = new System.Drawing.Size(373, 20);
+            this.logFileFormatBox.TabIndex = 5;
+            this.logFileFormatBox.Text = "C:\\inetpub\\logs\\LogFiles\\W3SVC1\\u_ex%.log";
             // 
-            // stepStatus3
+            // label2
             // 
-            this.stepStatus3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 98);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Lognit syslog host and port:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 149);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(159, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "IIS log file (use % for YYMMDD):";
+            // 
+            // installStatus
+            // 
+            this.installStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.stepStatus3.BackColor = System.Drawing.Color.White;
-            this.stepStatus3.Location = new System.Drawing.Point(0, 236);
-            this.stepStatus3.Name = "stepStatus3";
-            this.stepStatus3.Size = new System.Drawing.Size(695, 88);
-            this.stepStatus3.TabIndex = 2;
+            this.installStatus.AutoSize = true;
+            this.installStatus.BackColor = System.Drawing.Color.DimGray;
+            this.installStatus.Location = new System.Drawing.Point(19, 191);
+            this.installStatus.Name = "installStatus";
+            this.installStatus.Size = new System.Drawing.Size(373, 0);
+            this.installStatus.TabIndex = 8;
             // 
-            // stepStatus4
+            // panel1
             // 
-            this.stepStatus4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.stepStatus4.BackColor = System.Drawing.Color.White;
-            this.stepStatus4.Location = new System.Drawing.Point(-2, 330);
-            this.stepStatus4.Name = "stepStatus4";
-            this.stepStatus4.Size = new System.Drawing.Size(695, 88);
-            this.stepStatus4.TabIndex = 3;
+            this.panel1.AutoSize = true;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.logFileFormatBox);
+            this.panel1.Controls.Add(this.installStatus);
+            this.panel1.Controls.Add(this.installButton);
+            this.panel1.Controls.Add(this.header);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.serverHostBox);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(409, 263);
+            this.panel1.TabIndex = 9;
             // 
-            // headerBar1
+            // header
             // 
-            this.headerBar1.BackColor = System.Drawing.Color.White;
-            this.headerBar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("headerBar1.BackgroundImage")));
-            this.headerBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.headerBar1.Location = new System.Drawing.Point(0, 0);
-            this.headerBar1.Name = "headerBar1";
-            this.headerBar1.Size = new System.Drawing.Size(693, 42);
-            this.headerBar1.TabIndex = 4;
+            this.header.BackColor = System.Drawing.Color.Silver;
+            this.header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header.Location = new System.Drawing.Point(0, 0);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(407, 52);
+            this.header.TabIndex = 3;
             // 
             // MainForm
             // 
+            this.AcceptButton = this.installButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(693, 498);
+            this.ClientSize = new System.Drawing.Size(409, 263);
             this.ControlBox = false;
-            this.Controls.Add(this.headerBar1);
-            this.Controls.Add(this.stepStatus4);
-            this.Controls.Add(this.stepStatus3);
-            this.Controls.Add(this.stepStatus2);
-            this.Controls.Add(this.stepStatus1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Lognit for the Win";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private StepStatus stepStatus1;
-        private StepStatus stepStatus2;
-        private StepStatus stepStatus3;
-        private StepStatus stepStatus4;
-        private HeaderBar headerBar1;
+        private System.Windows.Forms.Button installButton;
+        private System.Windows.Forms.Label label1;
+        private HeaderBar header;
+        private System.Windows.Forms.TextBox serverHostBox;
+        private System.Windows.Forms.TextBox logFileFormatBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.FlowLayoutPanel installStatus;
+        private System.Windows.Forms.Panel panel1;
     }
 }
-
