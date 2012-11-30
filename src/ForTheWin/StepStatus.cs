@@ -16,6 +16,7 @@ namespace ForTheWin
         public event Action Complete;
 
         private readonly IStep step;
+        private Exception lastException;
 
         public StepStatus()
             : this(new NoopStep())
@@ -31,32 +32,33 @@ namespace ForTheWin
 
         public void Start()
         {
-            Thread thread = new Thread(() =>
-            {
-                this.BackColor = Color.LightGray;
-                try
-                {
-                    step.Execute();
-                    Do(() =>
-                    {
-                        this.IconBox.Image = Icons.Ok;
-                        this.BackColor = Color.White;
-                        InvokeComplete();
-                    });
-                }
-                catch (Exception e)
-                {
-                    Do(() =>
-                    {
-                        this.IconBox.Image = Icons.Warning;
-                        this.BackColor = Color.MistyRose;
-                        detailsButton.Visible = true;
-                        ignoreButton.Visible = true;
-                    });
-                }
-            });
+            new Thread(Execute).Start();
+        }
 
-            thread.Start();
+        private void Execute()
+        {
+            this.BackColor = Color.LightGray;
+            try
+            {
+                step.Execute();
+                Do(() =>
+                {
+                    this.IconBox.Image = Icons.Ok;
+                    this.BackColor = Color.White;
+                    InvokeComplete();
+                });
+            }
+            catch (Exception e)
+            {
+                lastException = e;
+                Do(() =>
+                {
+                    this.IconBox.Image = Icons.Warning;
+                    this.BackColor = Color.MistyRose;
+                    detailsButton.Visible = true;
+                    ignoreButton.Visible = true;
+                });
+            }
         }
 
         private void Do(Action action)
@@ -78,7 +80,7 @@ namespace ForTheWin
 
         private void detailsButton_Click(object sender, EventArgs e)
         {
-
+            new ExceptionForm(lastException).ShowDialog(this);
         }
 
     }

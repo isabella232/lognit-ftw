@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -83,10 +84,16 @@
     </Compile>
     <Compile Include="Steps\CheckIISLogsPath.cs" />
     <Compile Include="Steps\CheckServerAccessible.cs" />
+    <Compile Include="Steps\ConfigureApp.cs" />
+    <Compile Include="Steps\ConfigureEpilog.cs" />
+    <Compile Include="Steps\ConfigureSnare.cs" />
     <Compile Include="Steps\InstallApp.cs" />
     <Compile Include="Steps\IStep.cs" />
     <Compile Include="Steps\NoopStep.cs" />
     <Compile Include="Steps\StepException.cs" />
+    <EmbeddedResource Include="ExceptionForm.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HeaderBar.resx">
       <DependentUpon>HeaderBar.cs</DependentUpon>
     </EmbeddedResource>
