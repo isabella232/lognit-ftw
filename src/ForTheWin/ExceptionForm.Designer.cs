@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.header = new ForTheWin.HeaderBar();
-            this.typeLabel = new System.Windows.Forms.Label();
-            this.messageBox = new System.Windows.Forms.TextBox();
-            this.stacktraceBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.stacktraceBox = new System.Windows.Forms.TextBox();
+            this.messageBox = new System.Windows.Forms.TextBox();
+            this.typeLabel = new System.Windows.Forms.Label();
+            this.header = new ForTheWin.HeaderBar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,38 +52,15 @@
             this.panel1.Size = new System.Drawing.Size(615, 458);
             this.panel1.TabIndex = 0;
             // 
-            // header
+            // label1
             // 
-            this.header.BackColor = System.Drawing.Color.Silver;
-            this.header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.header.Location = new System.Drawing.Point(0, 0);
-            this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(613, 52);
-            this.header.TabIndex = 4;
-            // 
-            // typeLabel
-            // 
-            this.typeLabel.AutoSize = true;
-            this.typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typeLabel.Location = new System.Drawing.Point(16, 68);
-            this.typeLabel.Name = "typeLabel";
-            this.typeLabel.Size = new System.Drawing.Size(217, 13);
-            this.typeLabel.TabIndex = 6;
-            this.typeLabel.Text = "System.Exceptions.ExceptionTypeException";
-            // 
-            // messageBox
-            // 
-            this.messageBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.messageBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.messageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messageBox.Location = new System.Drawing.Point(34, 84);
-            this.messageBox.Multiline = true;
-            this.messageBox.Name = "messageBox";
-            this.messageBox.ReadOnly = true;
-            this.messageBox.Size = new System.Drawing.Size(558, 75);
-            this.messageBox.TabIndex = 7;
-            this.messageBox.Text = "Some import thing that should happen just didn\'t, maybe you should do something a" +
-    "bout this.";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 175);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Full stacktrace:";
             // 
             // stacktraceBox
             // 
@@ -100,15 +77,38 @@
             this.stacktraceBox.Text = "Some import thing that should happen just didn\'t, maybe you should do something a" +
     "bout this.";
             // 
-            // label1
+            // messageBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 175);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Full stacktrace:";
+            this.messageBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.messageBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.messageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messageBox.Location = new System.Drawing.Point(34, 84);
+            this.messageBox.Multiline = true;
+            this.messageBox.Name = "messageBox";
+            this.messageBox.ReadOnly = true;
+            this.messageBox.Size = new System.Drawing.Size(558, 75);
+            this.messageBox.TabIndex = 7;
+            this.messageBox.Text = "Some import thing that should happen just didn\'t, maybe you should do something a" +
+    "bout this.";
+            // 
+            // typeLabel
+            // 
+            this.typeLabel.AutoSize = true;
+            this.typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typeLabel.Location = new System.Drawing.Point(16, 68);
+            this.typeLabel.Name = "typeLabel";
+            this.typeLabel.Size = new System.Drawing.Size(217, 13);
+            this.typeLabel.TabIndex = 6;
+            this.typeLabel.Text = "System.Exceptions.ExceptionTypeException";
+            // 
+            // header
+            // 
+            this.header.BackColor = System.Drawing.Color.Silver;
+            this.header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header.Location = new System.Drawing.Point(0, 0);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(613, 52);
+            this.header.TabIndex = 4;
             // 
             // ExceptionForm
             // 
@@ -118,6 +118,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ExceptionForm";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

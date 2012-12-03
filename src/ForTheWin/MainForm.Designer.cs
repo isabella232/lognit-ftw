@@ -37,8 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.installStatus = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.header = new ForTheWin.HeaderBar();
             this.closeButton = new System.Windows.Forms.Button();
+            this.header = new ForTheWin.HeaderBar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,15 +140,6 @@
             this.panel1.Size = new System.Drawing.Size(409, 263);
             this.panel1.TabIndex = 9;
             // 
-            // header
-            // 
-            this.header.BackColor = System.Drawing.Color.Silver;
-            this.header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.header.Location = new System.Drawing.Point(0, 0);
-            this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(407, 52);
-            this.header.TabIndex = 3;
-            // 
             // closeButton
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -166,6 +157,15 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // header
+            // 
+            this.header.BackColor = System.Drawing.Color.Silver;
+            this.header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header.Location = new System.Drawing.Point(0, 0);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(407, 52);
+            this.header.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.AcceptButton = this.installButton;
@@ -177,6 +177,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lognit for the Win";
