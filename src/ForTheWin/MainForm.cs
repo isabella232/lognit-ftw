@@ -29,9 +29,9 @@ namespace ForTheWin
                 new StepStatus(new CheckIISLogsPath(logFileFormat)),
                 new StepStatus(new CheckServerAccessible(serverHost)),
                 new StepStatus(new InstallApp("Snare", Installers.Snare)),
+                new StepStatus(new ConfigureSnare(serverHost)),
                 new StepStatus(new InstallApp("Epilog", Installers.Epilog)),
                 new StepStatus(new ConfigureEpilog(serverHost, logFileFormat)),
-                new StepStatus(new ConfigureSnare(serverHost)),
             };
 
             for (int i = 0; i < statuses.Length - 1; i++)
