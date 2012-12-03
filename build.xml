@@ -31,7 +31,8 @@
   
   <Target Name="Package" DependsOnTargets="Rebuild">
 	<ItemGroup>
-      <ZipFiles Include="$(BuildDir)ftwcollector.exe"/>
+      <ZipFiles Include="$(BuildDir)installftw.exe"/>
+      <ZipFiles Include="$(BuildDir)installftw.xml"/>
     </ItemGroup>
 
 	<Copy SourceFiles ="@(ZipFiles)" DestinationFolder="$(PackageDir)" />

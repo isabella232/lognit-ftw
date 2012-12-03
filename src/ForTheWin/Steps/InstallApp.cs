@@ -25,7 +25,7 @@ namespace ForTheWin.Steps
 
         public void Execute()
         {
-            var filename = Path.GetTempFileName() + ".exe";
+            var filename = Path.GetTempFileName();
 
             try
             {

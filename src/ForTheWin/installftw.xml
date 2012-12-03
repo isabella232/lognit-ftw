@@ -1,0 +1,4 @@
+﻿<Default>
+  <LognitHost>localhost:5140</LognitHost>
+  <IISLogPath>C:\inetpub\logs\LogFiles\W3SVC1\u_ex%.log</IISLogPath>
+</Default>

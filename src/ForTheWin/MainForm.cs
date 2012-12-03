@@ -12,10 +12,12 @@ namespace ForTheWin
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public MainForm(DefaultConfig config)
         {
             InitializeComponent();
             header.BindHandleTo(this);
+            this.serverHostBox.Text = config.LognitHost;
+            this.logFileFormatBox.Text = config.IISLogPath;
         }
 
         private void installButton_Click(object sender, EventArgs e)
@@ -28,7 +30,7 @@ namespace ForTheWin
                 new StepStatus(new CheckServerAccessible(serverHost)),
                 new StepStatus(new InstallApp("Snare", Installers.Snare)),
                 new StepStatus(new InstallApp("Epilog", Installers.Epilog)),
-                new StepStatus(new ConfigureEpilog(serverHost)),
+                new StepStatus(new ConfigureEpilog(serverHost, logFileFormat)),
                 new StepStatus(new ConfigureSnare(serverHost)),
             };
 
@@ -48,6 +50,11 @@ namespace ForTheWin
         {
             status.Width = this.installStatus.Width;
             status.Dock = DockStyle.Top;
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

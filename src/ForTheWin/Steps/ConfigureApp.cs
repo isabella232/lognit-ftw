@@ -20,15 +20,20 @@ namespace ForTheWin.Steps
 
         public string Title
         {
-            get { return string.Format("Configuring {0}...", serviceName); }
+            get { return string.Format("Configuring {0}", serviceName); }
         }
 
-        public void Execute()
+        public virtual void Execute()
         {
             var parts = hostAndPort.Split(':');
             SetString("Network", "Destination", parts[0]);
             SetDword("Network", "DestPort", int.Parse(parts[1]));
             SetDword("Network", "Syslog", 1);
+
+            SetDword("Remote", "Restrict", 1);
+            SetDword("Remote", "Allow", 1);
+            SetDword("Remote", "AccessKey", 0);
+
 
             var controller = new ServiceController(serviceName);
             controller.Stop();

@@ -38,6 +38,7 @@
             this.installStatus = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.header = new ForTheWin.HeaderBar();
+            this.closeButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,9 +50,9 @@
             this.installButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.installButton.Image = ((System.Drawing.Image)(resources.GetObject("installButton.Image")));
             this.installButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.installButton.Location = new System.Drawing.Point(295, 197);
+            this.installButton.Location = new System.Drawing.Point(204, 197);
             this.installButton.Name = "installButton";
-            this.installButton.Size = new System.Drawing.Size(97, 53);
+            this.installButton.Size = new System.Drawing.Size(91, 53);
             this.installButton.TabIndex = 1;
             this.installButton.Text = "Install";
             this.installButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -124,6 +125,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.closeButton);
             this.panel1.Controls.Add(this.logFileFormatBox);
             this.panel1.Controls.Add(this.installStatus);
             this.panel1.Controls.Add(this.installButton);
@@ -146,6 +148,23 @@
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(407, 52);
             this.header.TabIndex = 3;
+            // 
+            // closeButton
+            // 
+            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
+            this.closeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.closeButton.Location = new System.Drawing.Point(301, 197);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(91, 53);
+            this.closeButton.TabIndex = 9;
+            this.closeButton.Text = "Close";
+            this.closeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // MainForm
             // 
@@ -179,5 +198,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel installStatus;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button closeButton;
     }
 }
